@@ -926,8 +926,8 @@ app.post('/user/:employeeID', function (req, res, next) {
         var smtpTransport = nodemailer.createTransport({
           service: 'gmail',
           auth: {
-            user: '5bitsoftwareteam@gmail.com',
-            pass: 'cppcispn1!!2'
+            user: process.env.SMTP_ACCOUNT_USERNAME,
+            pass: process.env.SMTP_ACCOUNT_PASSWORD
           }
         });
         var mailOptions = {
@@ -1298,8 +1298,8 @@ app.post('/forgot', function (req, res, next) {
       var smtpTransport = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: '5bitsoftwareteam@gmail.com',
-          pass: 'cppcispn1!!2'
+          user: process.env.SMTP_ACCOUNT_USERNAME,
+          pass: process.env.SMTP_ACCOUNT_PASSWORD
         }
       });
       var mailOptions = {
@@ -1368,8 +1368,8 @@ app.post('/reset/:token', function (req, res) {
       var smtpTransport = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: '5bitsoftwareteam@gmail.com',
-          pass: 'cppcispn1!!2'
+          user: process.env.SMTP_ACCOUNT_USERNAME,
+          pass: process.env.SMTP_ACCOUNT_PASSWORD
         }
       });
       var mailOptions = {
@@ -1430,8 +1430,8 @@ app.post('/validate/:token', function (req, res) {
       var smtpTransport = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: '5bitsoftwareteam@gmail.com',
-          pass: 'cppcispn1!!2'
+          user: process.env.SMTP_ACCOUNT_USERNAME,
+          pass: process.env.SMTP_ACCOUNT_PASSWORD
         }
       });
       var mailOptions = {
