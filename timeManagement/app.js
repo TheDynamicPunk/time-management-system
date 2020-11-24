@@ -3,6 +3,7 @@ var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+require('dotenv').config()
 // To catch whatever is typed in the form
 var bodyParser = require('body-parser');
 var session = require('express-session');
@@ -1296,6 +1297,10 @@ app.post('/forgot', function (req, res, next) {
     },
     function (token, user, done) {
       var smtpTransport = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false,
+        requireTLS: false,
         service: 'gmail',
         auth: {
           user: process.env.SMTP_ACCOUNT_USERNAME,
